@@ -6,7 +6,7 @@ This project uses machine learning to predict whether a person has heart disease
 
 ## 📦 Dataset
 
-- **Source:** [Heart Disease Dataset]([https://kaggle/input/heart-disease/heart_disease.csv](https://www.kaggle.com/datasets/oktayrdeki/heart-disease))
+- **Source:** [Heart Disease Dataset](https://www.kaggle.com/datasets/oktayrdeki/heart-disease)
 - **Samples:** ~10000 (may vary by version)
 - **Target:** Presence (1) or Absence (0) of heart disease
 - **Features Include:**

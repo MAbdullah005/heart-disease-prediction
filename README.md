@@ -6,8 +6,8 @@ This project uses machine learning to predict whether a person has heart disease
 
 ## 📦 Dataset
 
-- **Source:** [UCI Heart Disease Dataset](https://archive.ics.uci.edu/ml/datasets/heart+Disease)
-- **Samples:** ~300 (may vary by version)
+- **Source:** [Heart Disease Dataset](https://kaggle/input/heart-disease/heart_disease.csv)
+- **Samples:** ~10000 (may vary by version)
 - **Target:** Presence (1) or Absence (0) of heart disease
 - **Features Include:**
   - Age, Sex, Chest Pain Type (`cp`)
@@ -54,8 +54,8 @@ This project uses machine learning to predict whether a person has heart disease
 | Logistic Regression | Baseline linear classifier   |
 | Random Forest       | Ensemble of decision trees   |
 | XGBoost             | Boosted gradient trees       |
-| SVM (RBF Kernel)    | Support Vector Machine       |
-| KNN                 | K-Nearest Neighbors          |
+| SVM                 | Support Vector Machine       |
+| Naive Bayes         | Naive Bayes model           |
 
 ---
 
@@ -72,11 +72,11 @@ This project uses machine learning to predict whether a person has heart disease
 
 | Model                | Accuracy |
 |---------------------|----------|
-| Logistic Regression | 88.52%   |
-| Random Forest       | 90.16%   |
-| XGBoost             | 89.34%   |
-| SVM                 | 88.52%   |
-| KNN                 | 85.25%   |
+| Logistic Regression | 80.52%   |
+| Random Forest       | 82.16%   |
+| XGBoost             | 85.34%   |
+| SVM                 | 82.52%   |
+| Nave bar            | 78.25%   |
 
 > Plotted accuracy comparison with `matplotlib`.
 

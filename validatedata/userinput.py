@@ -5,7 +5,7 @@ class Input(BaseModel):
 
 
     age: Annotated[int, Field(..., gt=0, lt=120, description='Age of patient')]
-    gender: Annotated[Literal['male', 'female'], Field(..., description='Gender of patient')]
+    gender: Annotated[Literal['Male', 'Female'], Field(..., description='Gender of patient')]
     blood_pressure: Annotated[float, Field(..., gt=60, lt=220, description='Blood pressure in mmHg')]
     cholesterol_level: Annotated[float, Field(..., gt=50, lt=300, description='Cholesterol level in mg/dL')]
     exercise_habit: Annotated[Literal['High', 'Medium', 'Low'], Field(..., description='Level of physical activity')]
@@ -21,6 +21,6 @@ class Input(BaseModel):
     sleep_hours: Annotated[float, Field(..., ge=0, le=24, description='Average sleep hours per day')]
     sugar_consumption: Annotated[Literal['High','Medium','Low'], Field(..., description='Daily sugar intake in grams')]
     triglyceride_level: Annotated[float, Field(..., gt=30, lt=1000, description='Triglyceride level in mg/dL')]
-    fasting_blood_sugar: Annotated[float, Field(..., gt=50, lt=300, description='Fasting blood sugar in mg/dL')]
+    fasting_blood_sugar: Annotated[float, Field(..., gt=20, lt=300, description='Fasting blood sugar in mg/dL')]
     crp_level: Annotated[float, Field(..., ge=0, le=20, description='C-Reactive Protein (CRP) level in mg/L')]
     homocysteine_level: Annotated[float, Field(..., ge=0, le=50, description='Homocysteine level in µmol/L')]

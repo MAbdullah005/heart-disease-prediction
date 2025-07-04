@@ -6,10 +6,10 @@ st.title('Heart Disease Predication App')
 st.markdown('Enter the detail below')
 
 Age = st.number_input("Age", min_value=1, max_value=150, value=56)
-Gender = st.selectbox("Gender", options=['Male', 'Female'])
+gender = st.selectbox("Gender", options=['Male', 'Female'])
 Blood_Pressure = st.number_input("Blood Pressure", min_value=10.0, max_value=400.0, value=153.0)
 Cholesterol_Level = st.number_input("Cholesterol Level", value=155.0)
-Exercise_Habits = st.selectbox("Exercise Habits", options=["High", "Low"])
+Exercise_Habit = st.selectbox("Exercise Habits", options=["High", "Low"])
 Smoking = st.selectbox("Smoking", options=["Yes", "No"])
 Family_Heart_Disease = st.selectbox("Family Heart Disease", options=["Yes", "No"])
 Diabetes = st.selectbox("Diabetes", options=["Yes", "No"])
@@ -21,43 +21,44 @@ Alcohol_Consumption = st.selectbox("Alcohol Consumption", options=["High", "Low"
 Stress_Level = st.selectbox("Stress Level", options=["High", "Medium", "Low"])
 Sleep_Hours = st.number_input("Sleep Hours", min_value=0.0, max_value=24.0, value=7.6)
 Sugar_Consumption = st.selectbox("Sugar Consumption", options=["High", "Medium", "Low"])
-Triglyceride_Level = st.number_input("Triglyceride Level", value=342.0)
-Fasting_Blood_Sugar = st.number_input("Fasting Blood Sugar", value=12.96)
+Triglyceride_Level = st.number_input("Triglyceride Level", value=200.0)
+Fasting_Blood_Sugar = st.number_input("Fasting Blood Sugar", value=36)
 CRP_Level = st.number_input("CRP Level", value=12.39)
-Homocysteine_Level = st.number_input("Homocysteine Level", value=12.38)
+Homocysteine_Level = st.number_input("Homocysteine Level", value=12.8)
 
 
 # predict
 if st.button("Predict Heart Disease Risk"):
     input_dict = {
-        "Age": Age,
-        "Gender": Gender,
-        "Blood Pressure": Blood_Pressure,
-        "Cholesterol Level": Cholesterol_Level,
-        "Exercise Habits": Exercise_Habits,
-        "Smoking": Smoking,
-        "Family Heart Disease": Family_Heart_Disease,
-        "Diabetes": Diabetes,
-        "BMI": BMI,
-        "High Blood Pressure": High_Blood_Pressure,
-        "Low HDL Cholesterol": Low_HDL_Cholesterol,
-        "High LDL Cholesterol": High_LDL_Cholesterol,
-        "Alcohol Consumption": Alcohol_Consumption,
-        "Stress Level": Stress_Level,
-        "Sleep Hours": Sleep_Hours,
-        "Sugar Consumption": Sugar_Consumption,
-        "Triglyceride Level": Triglyceride_Level,
-        "Fasting Blood Sugar": Fasting_Blood_Sugar,
-        "CRP Level": CRP_Level,
-        "Homocysteine Level": Homocysteine_Level
-    }
+    "age": Age,
+    "gender":gender,  # if needed
+    "blood_pressure": Blood_Pressure,
+    "cholesterol_level": Cholesterol_Level,
+    "exercise_habit":Exercise_Habit,
+    "smoking": Smoking,
+    "family_heart_disease": Family_Heart_Disease,
+    "diabetes": Diabetes,
+    "bmi": BMI,
+    "high_blood_pressure": High_Blood_Pressure,
+    "low_hdl_cholesterol": Low_HDL_Cholesterol,
+    "high_ldl_cholesterol": High_LDL_Cholesterol,
+    "alcohol_consumption": Alcohol_Consumption,
+    "stress_level": Stress_Level,
+    "sleep_hours": Sleep_Hours,
+    "sugar_consumption": Sugar_Consumption,
+    "triglyceride_level": Triglyceride_Level,
+    "fasting_blood_sugar": Fasting_Blood_Sugar,
+    "crp_level": CRP_Level,
+    "homocysteine_level": Homocysteine_Level
+}
+
     try:
         responce=requests.post(API_URL,json=input_dict)
         result=responce.json()
         if responce.status_code==200 and 'responce' in result:
             predication=result['responce']
             st.success(f"Predication Heart Disease Risk :**{predication['predication_categorey']}**")
-            st.success("🔍 Confidence ",predication['confidence'])
+            st.success(f"🔍 Confidence {predication['confidence']}")
             st.success('📊 Class Probilities')
             st.json(predication['classes_probabilties'])
         else:

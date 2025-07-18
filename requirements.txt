@@ -1,8 +1,8 @@
+fastapi
+uvicorn
 pandas
 numpy
-python
-ipykearnel
+ipykernel
 matplotlib
-streamlit
-fastapi
-sckit-learn
+scikit-learn==1.6.1
+joblib

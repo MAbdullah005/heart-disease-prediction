@@ -78,4 +78,64 @@ This project uses machine learning to predict whether a person has heart disease
 | SVM                 | 82.52%   |
 | Nave bar            | 78.25%   |
 
-> Plotted accuracy comparison with `matplotlib`.
+### 🧪 Model Evaluation
+
+- Classification Report (Precision, Recall, F1)
+- ROC-AUC
+- Confusion Matrix
+- Cross-validation
+
+
+## ⚙️ Application Architecture
+The project is divided into two components:
+
+#### 🧠 Backend (FastAPI)
+Provides REST API for predictions
+
+Loads and serves the trained ML model
+
+- Swagger UI: http://localhost:8000/docs
+
+Source: app.py
+- Image: abdullahali005/heatdiseaseapp-backend
+
+### 🖥️ Frontend (Streamlit)
+Clean UI to collect user input
+
+Sends data to FastAPI and displays prediction results
+
+- Streamlit UI: http://localhost:8501
+- Source: forntend/app1.py
+- Image: abdullahali005/heatdiseaseapp-forntend
+
+
+🐳 Docker Images & Usage
+1️⃣ Clone the Project
+bash
+Copy
+Edit
+git clone https://github.com/your-username/heart-disease-prediction
+cd heart-disease-prediction
+2️⃣ Build Images
+bash
+Copy
+Edit
+# Build both services using Docker Compose
+docker-compose build
+3️⃣ Run Containers
+bash
+Copy
+Edit
+docker-compose up
+Frontend: http://localhost:8501
+
+Backend: http://localhost:8000/docs
+
+# 🔗 Docker Hub Links
+📦 Backend: [abdullahali005/heatdiseaseapp-backend](https://hub.docker.com/repository/docker/abdullahali005/heatdiseaseapp-backend/general)
+
+📦 Frontend:  [abdullahali005/heatdiseaseapp-forntend](https://hub.docker.com/repository/docker/abdullahali005/heatdiseaseapp-forntend/general)
+
+
+
+

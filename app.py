@@ -26,7 +26,8 @@ def health():
 @app.get('/home')
 def home():
     return {'message ':'Prdedict the patient heart disease by providing specific insofrmation',
-            'instruction':'check out Predict endpoint to predict the heart disease '}
+            'instruction':'check out Predict endpoint to predict the heart disease ',
+            'Restrication':'Test Predict function through docs of Fastapi endpoint'}
 #Age,Gender,Blood Pressure,Cholesterol Level,Exercise Habits,Smoking,Family Heart Disease,Diabetes,BMI,
 #High Blood Pressure,Low HDL Cholesterol,High LDL Cholesterol,Alcohol Consumption,Stress Level,Sleep Hours,Sugar Consumption,
 # Triglyceride Level,Fasting Blood Sugar,CRP Level,Homocysteine Level,Heart Disease Status
